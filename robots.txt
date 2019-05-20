@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://vneverz.github.io/sitemap.xml

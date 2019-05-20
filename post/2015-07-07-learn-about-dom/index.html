@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>關於DOM的學習 - Doron&#39;s code - Write Makes Might!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Doran" /><meta name="description" content="今天在找網站元素的時候看到的，因為在找window、document的差異，找到這篇 what-is-the-difference-between-document-and-window-objects 另外一開始不知道ActiveXObject開啟之後會是" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://vneverz.github.io/post/2015-07-07-learn-about-dom/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="關於DOM的學習" />
+<meta property="og:description" content="今天在找網站元素的時候看到的，因為在找window、document的差異，找到這篇 what-is-the-difference-between-document-and-window-objects 另外一開始不知道ActiveXObject開啟之後會是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vneverz.github.io/post/2015-07-07-learn-about-dom/" />
+<meta property="article:published_time" content="2015-07-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-07T00:00:00+00:00" />
+
+<meta itemprop="name" content="關於DOM的學習">
+<meta itemprop="description" content="今天在找網站元素的時候看到的，因為在找window、document的差異，找到這篇 what-is-the-difference-between-document-and-window-objects 另外一開始不知道ActiveXObject開啟之後會是">
+
+
+<meta itemprop="datePublished" content="2015-07-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1218">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="關於DOM的學習"/>
+<meta name="twitter:description" content="今天在找網站元素的時候看到的，因為在找window、document的差異，找到這篇 what-is-the-difference-between-document-and-window-objects 另外一開始不知道ActiveXObject開啟之後會是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Doran&#39;s code</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首頁</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">檔案夾</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">標籤</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分類</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Doran&#39;s code</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首頁</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">檔案夾</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">標籤</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分類</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">關於DOM的學習</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-07-07 </span>
+        
+          <span class="more-meta"> 1218 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>今天在找網站元素的時候看到的，因為在找window、document的差異，找到這篇
+<a href="http://goo.gl/ym9iML">what-is-the-difference-between-document-and-window-objects</a>
+另外一開始不知道ActiveXObject開啟之後會是什麼屬性的物件，看到這篇文章：
+<a href="http://stackoverflow.com/questions/8227612/how-to-create-document-objects-with-javascript">from this</a>t
+you can (kind of) create a HTML document in older versions of Internet Explorer, using ActiveXObject:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">htmlDoc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ActiveXObject</span><span class="p">(</span><span class="s2">&#34;htmlfile&#34;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>The resulting object will be a <code>new document</code>, which can be manipulated just like any other document.
+<a href="http://blog.sciencenet.cn/blog-448935-731488.html">document.frames和window.frames在不同浏览器中的使用</a></p>
+
+<p>發現get的a結果不知道為何是陣列，所以才需要加[]
+<code>getElementsByTagName(&quot;a&quot;)[0]</code></p>
+
+<p>昨天和前輩們討論，不確定是否為跨frame的security issue，
+不過倒是知道了一種新的網頁運作方式<a href="http://phantomjs.org/">phantom</a>，Full web stack No browser required</p>
+
+<p>另外跨站frame的問題，這裏有寫
+<a href="http://stackoverflow.com/questions/25098021/securityerror-blocked-a-frame-with-origin-from-accessing-a-cross-origin-frame">SecurityError: Blocked a frame with origin from accessing a cross-origin frame</a>
+今天看到主管debug的能力，用ie，概念就是從沒有問題的地方一直找，不過可能因為是ie的關係，
+所以不太熟悉ie develop tool
+1. 先從報錯的地方設中斷點
+2. (在ie中才有的) 在console中打出要找的element， add to watch</p>
+
+<p><img src="http://user-image.logdown.io/user/13401/blog/12633/post/284375/IOSKWknHR32Z9oCuBw7y_Screen%20Shot%202015-07-08%20at%202.21.12%20PM.png" alt="Screen Shot 2015-07-08 at 2.21.12 PM.png" />
+    然後去看watch
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/284375/vW44gQMQRbK7n4vXVRIg_Screen%20Shot%202015-07-08%20at%202.21.35%20PM.png" alt="Screen Shot 2015-07-08 at 2.21.35 PM.png" />
+其中利用browser內建的方式來<code>XX.</code>有東西就會自動出現在點號後面
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/284375/mC2c9XsUQRu96m3m24sA_Screen%20Shot%202015-07-08%20at%2011.34.24%20AM.png" alt="Screen Shot 2015-07-08 at 11.34.24 AM.png" /></p>
+
+<p>最後發現奇怪的問題，用<code>doc.frames[&quot;menu_frm&quot;].document.getElementById(&quot;folder14&quot;).XXX</code>會出現<code>undefinded document</code>
+但如果以陣列的方式去抓frames，例如<code>doc.frames[1].document.getElementById(&quot;folder2&quot;).XXX</code>就可以有東西一直往下抓，it&rsquo;s tricky!</p>
+
+<p>在寫js的程式時，發現有同樣的東西就可以擷取成function，所以試著寫了但發現有問題</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">   <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">folder2</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;td&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+   <span class="nx">jsWaitForDone</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>        
+   <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">folder8</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;td&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">()</span>
+   <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">item10</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;td&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>改成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">jsframe</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="nx">num</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="nx">jsframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&#34;folder2&#34;</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;td&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>  
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>結果發現沒有動靜，原來是function沒有<code>return</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">多加入return</span>
+<span class="kd">function</span> <span class="nx">jsframe</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="nx">num</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="nx">jsframe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s2">&#34;folder2&#34;</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;td&#34;</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>  
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>因為需要得到包進去處理後丟出來的數值，所以要將東西return，而且要注意傳入的型別是<code>number</code>還是<code>string</code></p>
+
+<p>遇到<code>onblur</code>的屬性，可以設定去<code>focus</code>另一個元素就達成模擬該元素onblur。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">&#34;service_shhmm&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">focus</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>遇到onchange事件去觸發居服員欄位顯示，目前以下錯誤的嘗試都只能選select，一開始以為是selectIndex沒有改變的問題，也想過去看他的function怎麼寫蓋過去。
+###重要的是學習解決問題的邏輯！###</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"> <span class="c1">// doc.frames[3].document.getElementById(&#34;service_man&#34;).options[3];
+</span><span class="c1"></span> <span class="c1">//jsframe(3,&#34;service_man&#34;).getElementsByTagName(&#39;option&#39;)[2].selectedIndex = 2; //&#39;selected&#39;;
+</span><span class="c1"></span> <span class="c1">//doc.frames[3].document.getElementById(&#34;service_man&#34;).getElementsByTagName(&#39;option&#39;)[1].selected = true;
+</span><span class="c1"></span> <span class="c1">//doc.frames[3].document.getElementById(&#34;service_man&#34;).focus();
+</span><span class="c1"></span> <span class="c1">//var evt = new Event(&#34;change&#34;);
+</span><span class="c1">//doc.frames[3].document.getElementById(&#34;service_man&#34;).dispatchEvent(evt);
+</span><span class="c1">//doc.frames[3].document.getElementById(&#34;service_man&#34;).value = doc.frames[3].document.getElementById(&#34;service_man&#34;).getElementsByTagName(&#39;option&#39;)[1].value
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>結果發現可以直接call onchange()
+<a href="http://www.w3schools.com/jsref/event_onchange.asp">onchange()</a></p>
+
+<p>為了解決alert出現，去看原始碼，然後發現是send（）的動作，所以只要不傳入數值，就不會出現alert.
+<code>send(obj,str1,prog_no,keyVal)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">    <span class="c1">// 蓋掉alert
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;script&#34;</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;type&#34;</span><span class="p">,</span> <span class="s2">&#34;text/javascript&#34;</span><span class="p">);</span>
+    <span class="c1">// window.alert = function(e){return true;}; window.confirm = function(e){return true;}; function send(a,b,c,d) { alert(c);};
+</span><span class="c1"></span>    <span class="nx">s</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="s2">&#34;function send(a,b,c,d) {};&#34;</span><span class="p">;</span>
+    <span class="nx">doc</span><span class="p">.</span><span class="nx">frames</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nb">document</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p><a href="http://www.w3schools.com/jsref/met_document_createelement.asp">createElement() Method</a> 相關程式碼可參考：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">btn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&#34;BUTTON&#34;</span><span class="p">);</span>        <span class="c1">// Create a &lt;button&gt; element
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s2">&#34;CLICK ME&#34;</span><span class="p">);</span>       <span class="c1">// Create a text node
+</span><span class="c1"></span><span class="nx">btn</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>                                <span class="c1">// Append the text to &lt;button&gt;
+</span><span class="c1"></span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span> 
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>use programmering chose option and selected:</p>
+
+<p><a href="http://goo.gl/ZwTJFz">HTML SELECT - Change selected option by VALUE using JavaScript</a>
+原來直接在<code>&lt;selection&gt;</code>這層指定<code>.value</code>的值，就可以讓內含的option值選到</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Doran</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2015-07-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-07-08-markdown-syntax-teaching-resources/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">markdown的語法教學資源</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2015-07-01-railsbridge-extra-credit-add-a-downvote-button/">
+            <span class="next-text nav-default">RailsBridge Extra Credit : Add a downvote button</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vneverz@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/doran.wu" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://github.com/vneverz" class="iconfont icon-github" title="github"></a>
+  <a href="https://vneverz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Doran</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

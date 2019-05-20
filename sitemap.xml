@@ -1,0 +1,377 @@
+<?xml-stylesheet type="text/xsl" href="https://vneverz.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://vneverz.github.io/</loc>
+    <lastmod>2019-05-14T10:24:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/</loc>
+    <lastmod>2019-05-14T10:24:16+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/gitadd-error/</loc>
+    <lastmod>2019-05-14T10:24:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/applyandomain/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/faviocn_gen/</loc>
+    <lastmod>2019-05-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/</loc>
+    <lastmod>2019-05-14T00:11:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/blogging/</loc>
+    <lastmod>2019-05-14T00:11:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/web-development/</loc>
+    <lastmod>2019-05-14T00:11:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/usehugo/</loc>
+    <lastmod>2019-05-14T00:11:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/hidden-post/</loc>
+    <lastmod>2018-03-08T22:01:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/categories/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/shortcodes/</loc>
+    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/categories/shortcodes/</loc>
+    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/shortcodes/</loc>
+    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2016-07-11-20160711-0715-records/</loc>
+    <lastmod>2016-07-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2016-07-08-771421/</loc>
+    <lastmod>2016-07-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-12-15-infomation/</loc>
+    <lastmod>2015-12-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-11-20-knowing-active-jobs/</loc>
+    <lastmod>2015-11-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-11-20-learn-ruby-the-hard-way/</loc>
+    <lastmod>2015-11-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-11-18-want-to-judge-if-array-value-all-in-some/</loc>
+    <lastmod>2015-11-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-11-12-ui-ux-with-hans-shin/</loc>
+    <lastmod>2015-11-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-31-bootstrap-tip/</loc>
+    <lastmod>2015-10-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-22-ruby-on-rails-to-custom-log-file/</loc>
+    <lastmod>2015-10-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-21-use-css-clear/</loc>
+    <lastmod>2015-10-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-05-uigathering-october-activity-user-decryption-water-lines-to-the-poor-the-key-excerpts/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-05-rails-fb-bug/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-10-01-jquery-scrolling-to-element/</loc>
+    <lastmod>2015-10-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-25-css-print-set/</loc>
+    <lastmod>2015-09-25T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-22-merge-note-in-command-line/</loc>
+    <lastmod>2015-09-22T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-17-jquery-find-solution-on-working/</loc>
+    <lastmod>2015-09-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-16-2015-rubyconf-tw/</loc>
+    <lastmod>2015-09-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-15-rails-style-guide/</loc>
+    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-03-infinite-scrolling-with-rails/</loc>
+    <lastmod>2015-09-03T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-09-02-ruby-on-rails-js-tips/</loc>
+    <lastmod>2015-09-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-31-scss-and-css/</loc>
+    <lastmod>2015-08-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-31-ted-quote-lines/</loc>
+    <lastmod>2015-08-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-18-deploy-tips/</loc>
+    <lastmod>2015-08-18T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-17-mysql-tips/</loc>
+    <lastmod>2015-08-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-16-dog-whisperer/</loc>
+    <lastmod>2015-08-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-08-14-ruby-conf-taiwan-2011-newsletter/</loc>
+    <lastmod>2015-08-14T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-31-git-operations-questions/</loc>
+    <lastmod>2015-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-30-rails-tips/</loc>
+    <lastmod>2015-07-30T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-28-ado-reference-data/</loc>
+    <lastmod>2015-07-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-27-mac-set-up/</loc>
+    <lastmod>2015-07-27T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-16-udacity-array-manipulation-quiz/</loc>
+    <lastmod>2015-07-16T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-15-start-using-phantomjs/</loc>
+    <lastmod>2015-07-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-08-markdown-syntax-teaching-resources/</loc>
+    <lastmod>2015-07-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-07-learn-about-dom/</loc>
+    <lastmod>2015-07-07T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-07-01-railsbridge-extra-credit-add-a-downvote-button/</loc>
+    <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/2015-06-29-sb-admin-process/</loc>
+    <lastmod>2015-06-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/categories/syntax-highlighting/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/syntax-highlighting/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/post/syntax-highlighting/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/preview/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://vneverz.github.io/tags/tag-5/</loc>
+    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

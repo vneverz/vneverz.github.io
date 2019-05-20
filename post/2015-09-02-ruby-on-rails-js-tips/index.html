@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ruby on Rails JS tips - Doron&#39;s code - Write Makes Might!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Doran" /><meta name="description" content="主因： ###按了回首頁但js效果就沒了，要重新整理才會出現 &amp;gt;解法一、把application.js中的//= require turbolinks 拿掉 1 缺點：這樣每次都" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://vneverz.github.io/post/2015-09-02-ruby-on-rails-js-tips/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Ruby on Rails JS tips" />
+<meta property="og:description" content="主因： ###按了回首頁但js效果就沒了，要重新整理才會出現 &gt;解法一、把application.js中的//= require turbolinks 拿掉 1 缺點：這樣每次都" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vneverz.github.io/post/2015-09-02-ruby-on-rails-js-tips/" />
+<meta property="article:published_time" content="2015-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-09-02T00:00:00+00:00" />
+
+<meta itemprop="name" content="Ruby on Rails JS tips">
+<meta itemprop="description" content="主因： ###按了回首頁但js效果就沒了，要重新整理才會出現 &gt;解法一、把application.js中的//= require turbolinks 拿掉 1 缺點：這樣每次都">
+
+
+<meta itemprop="datePublished" content="2015-09-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-09-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="856">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ruby on Rails JS tips"/>
+<meta name="twitter:description" content="主因： ###按了回首頁但js效果就沒了，要重新整理才會出現 &gt;解法一、把application.js中的//= require turbolinks 拿掉 1 缺點：這樣每次都"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Doran&#39;s code</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首頁</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">檔案夾</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">標籤</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分類</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Doran&#39;s code</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首頁</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">檔案夾</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">標籤</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分類</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ruby on Rails JS tips</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-09-02 </span>
+        
+          <span class="more-meta"> 856 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#pass-environment-variables-in-js">pass Environment Variables in JS</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>主因：
+###按了回首頁但js效果就沒了，要重新整理才會出現
+&gt;解法一、把application.js中的<code>//= require turbolinks</code> 拿掉</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">缺點：這樣每次都會重load減低效能，`turbolinks`就是要降低重新load head裡面檔案的效能問題</pre></td></tr></table>
+</div>
+</div>
+<p><img src="http://user-image.logdown.io/user/13401/blog/12633/post/294152/PDYUrlZhT1ys3BbDvT8A_Screen%20Shot%202015-09-02%20at%204.23.35%20PM.png" alt="Screen Shot 2015-09-02 at 4.23.35 PM.png" /></p>
+
+<blockquote>
+<p>解法二、把每次需要重新load的js放到<code>application.hrml.rb</code>的body裡面</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">缺點：程式碼會變得有點醜</pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>解法三、把要重新load的js從<code>application.hrml.rb</code>的<code>&lt;%= javascript_include_tag 'application', 'data-turbolinks-track' =&gt; true %&gt;</code>分離出來</p>
+</blockquote>
+
+<p>作法：分離寫法<code>&lt;%= javascript_include_tag 'js檔名', 'data-turbolinks-track' =&gt; false %&gt;</code>
+要把<code>'data-turbolinks-track'</code>改為false，但因為這樣就不會在一開始全部initialize，會因為沒有load到而報錯，於是到<code>assets.rb</code>裡面找到這行把js檔名加入。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-rb" data-lang="rb"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-rb" data-lang="rb"><span class="no">Rails</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">precompile</span> <span class="o">+=</span> <span class="sx">%w( swagger_ui.js 
+</span><span class="sx">	                                               swagger_ui.css 
+</span><span class="sx">                                                 js檔名.js
+</span><span class="sx">	                                              ckeditor/* 
+</span><span class="sx">	                                            )</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>所以<code>application.hrml.rb</code>會長這樣
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/294152/QubpLPeXRvyxKUXcByhJ_Screen%20Shot%202015-09-02%20at%204.41.48%20PM.png" alt="Screen Shot 2015-09-02 at 4.41.48 PM.png" /></p>
+
+<p><a href="http://stackoverflow.com/questions/5940871/ruby-on-rails-using-javascript-variable-in-tags-in-html-erb">Ruby on rails: using javascript variable in &lt;%= %&gt; tags in Html.erb</a></p>
+
+<p><a href="http://stackoverflow.com/questions/6172174/how-do-i-insert-variable-values-into-html-tags-in-erb-templates">How do I insert variable values into HTML tags in ERB templates?</a></p>
+
+<p><a href="http://stackoverflow.com/questions/5548827/get-value-of-list-item-with-jquery">Get value of List Item with jQuery</a></p>
+
+<p><a href="http://stackoverflow.com/questions/11334581/error-on-using-alert-in-javascript-property-alert-of-object-is-not-a-function">Error on using alert in Javascript (Property &lsquo;alert&rsquo; of object is not a function)</a></p>
+
+<p><a href="http://stackoverflow.com/questions/1313373/jquery-same-click-event-for-multiple-elements">JQuery same click event for multiple elements</a></p>
+
+<p>with bind() method
+<a href="http://stackoverflow.com/questions/3436139/how-to-bind-jquery-events-on-multiple-predeclared-jquery-objects">How to bind jQuery events on multiple PREDECLARED jQuery objects</a></p>
+
+<p><a href="http://stackoverflow.com/questions/3090230/in-jquery-what-does-fn-mean">In jQuery, what does $.fn. mean?</a>
+It allows you to extend jQuery with your own functions.</p>
+
+<p>For example, $.fn.something = function{} will allow you to use $(&ldquo;#element&rdquo;).something().</p>
+
+<p>$.fn is also synonymous with jQuery.fn which might make your Google searches easier.</p>
+
+<p><a href="http://stackoverflow.com/questions/21307137/using-jquery-to-get-data-attribute-values-with-each">Using jQuery to get data attribute values with .each()</a></p>
+
+<p><a href="http://stackoverflow.com/questions/5309926/how-to-get-the-data-id-attribute">How to get the data-id attribute?</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;data-id&#34;</span><span class="p">)</span> <span class="c1">// will return the string &#34;123&#34;
+</span><span class="c1">//or .data() (if you use newer jQuery &gt;= 1.4.3)
+</span><span class="c1"></span>
+<span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s2">&#34;id&#34;</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div>
+<p><a href="http://goo.gl/CJspx">How to find a value in a multidimensional object/array in Javascript?</a></p>
+
+<p>想要做的就是把點FOOTER標題後會回到TAB active的狀態，但發現有點冗長。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.listFoot&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">multi</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dt-tab:not(:first)&#39;</span><span class="p">);</span>
+    <span class="c1">// var dts_array = [];
+</span><span class="c1"></span>
+    <span class="c1">//   $.each(multi, function (index, item) {
+</span><span class="c1"></span>    <span class="c1">//       dts_array.push( {name: &#39;tab&#39;, value: $(item).data(&#39;tab&#39;)} );  
+</span><span class="c1"></span>    <span class="c1">//   });  
+</span><span class="c1"></span>
+    <span class="c1">// console.log(dts_array);
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&#34;data-tab&#34;</span><span class="p">);</span>　<span class="c1">// get cateId
+</span><span class="c1"></span>    <span class="c1">// var b = dts_array.filter(function (dts) { return dts.value == data });
+</span><span class="c1"></span>    <span class="c1">// console.log(b); 抓到值了但不知道要怎麼MATCH到相同的tab
+</span><span class="c1"></span>    
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.dt-tab&#34;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&#34;active&#34;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&#34;.dt-tab[data-tab=&#34;</span><span class="o">+</span><span class="nx">data</span><span class="o">+</span><span class="s2">&#34;]&#34;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">);</span>
+    <span class="c1">//得到類別.dt-tab的object中，屬性data-tab中值等於data的狀況加入Class
+</span><span class="c1"></span>    <span class="c1">// var rt = $(&#39;.responsive-tabs dt:not(:first)&#39;).attr(&#34;data-tab&#34;);
+</span><span class="c1"></span>    
+    <span class="c1">// if(data === rt){
+</span><span class="c1"></span>    <span class="c1">//   $(&#39;.responsive-tabs dt&#39;).addClass(&#39;active&#39;)
+</span><span class="c1"></span>    <span class="c1">// }
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="pass-environment-variables-in-js">pass Environment Variables in JS</h3>
+
+<p>因為環境變數是在server-side傳送，js是clent-side，所以會遇到讀不出來的問題，以下是找到的解法。<a href="http://goo.gl/rRRwXq">how to get environment in javascript file in rails app</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">).</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;search&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">reload</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)){</span>
+    <span class="c1">// remote will be /kw/search/
+</span><span class="c1"></span>
+    <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&#34;&lt;%=ENV[&#39;search_url&#39;] %&gt;&#34;</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">url</span><span class="o">+</span><span class="s2">&#34;?cate=&#34;</span><span class="o">+</span><span class="nx">category_id</span><span class="p">;</span>
+
+  <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Doran</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2015-09-02
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-09-03-infinite-scrolling-with-rails/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">infinite Scrolling with Rails</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2015-08-31-scss-and-css/">
+            <span class="next-text nav-default">SCSS and CSS</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vneverz@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/doran.wu" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://github.com/vneverz" class="iconfont icon-github" title="github"></a>
+  <a href="https://vneverz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Doran</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

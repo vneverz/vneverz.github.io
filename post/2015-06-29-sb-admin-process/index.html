@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>用sublime text套sb-admin的過程 - Doron&#39;s code - Write Makes Might!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Doran" /><meta name="description" content="今天想要套套看不同的Thene 找了sb-admin-2來用 參考這篇教學 ###有幾個重點 先按照前兩個步驟完成,最後一個加THEME的動作比較複" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://vneverz.github.io/post/2015-06-29-sb-admin-process/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="用sublime text套sb-admin的過程" />
+<meta property="og:description" content="今天想要套套看不同的Thene 找了sb-admin-2來用 參考這篇教學 ###有幾個重點 先按照前兩個步驟完成,最後一個加THEME的動作比較複" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vneverz.github.io/post/2015-06-29-sb-admin-process/" />
+<meta property="article:published_time" content="2015-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-29T00:00:00+00:00" />
+
+<meta itemprop="name" content="用sublime text套sb-admin的過程">
+<meta itemprop="description" content="今天想要套套看不同的Thene 找了sb-admin-2來用 參考這篇教學 ###有幾個重點 先按照前兩個步驟完成,最後一個加THEME的動作比較複">
+
+
+<meta itemprop="datePublished" content="2015-06-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-06-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="869">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用sublime text套sb-admin的過程"/>
+<meta name="twitter:description" content="今天想要套套看不同的Thene 找了sb-admin-2來用 參考這篇教學 ###有幾個重點 先按照前兩個步驟完成,最後一個加THEME的動作比較複"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Doran&#39;s code</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首頁</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">檔案夾</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">標籤</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分類</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Doran&#39;s code</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首頁</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">檔案夾</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">標籤</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分類</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">用sublime text套sb-admin的過程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-29 </span>
+        
+          <span class="more-meta"> 869 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>今天想要套套看不同的Thene 找了sb-admin-2來用
+<a href="https://goo.gl/DLZCPH">參考這篇教學</a></p>
+
+<p>###有幾個重點
+先按照前兩個步驟完成,最後一個加THEME的動作比較複雜
+<a href="https://github.com/ihower/rails-exercise-ac3/pull/1">ihower的教學</a>
+1. 安裝gem:Gemfile裡面加上<code>gem 'bootstrap-sass'</code>和 <code>gem 'autoprefixer-rails'</code>
+2. 在<code>assets/javascripts/application.js</code>下加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">//= require bootstrap-sprockets</pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li><p>把<code>assets/stylesheet/application.css</code>改名為<code>assets/styleseet/application.css.sass</code>，然後內容改為</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">@import &#34;bootstrap-sprockets&#34;;
+@import &#34;bootstrap&#34;;
+@import &#34;font-awesome&#34;
+@import &#34;sb-admin-2&#34;
+@import &#34;XXX&#34;
+.
+.
+&lt;--任何有加入stylesheets/css的 .css檔案 --&gt;</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>把erb增加bootstrap樣式，例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;p&gt;&lt;%= link_to new_event_path, class: &#39;btn btn-primary&#39; do %&gt;
+&lt;span class=&#34;glyphicon glyphicon-plus&#34;&gt;&lt;/span&gt;
+New event
+&lt;% end %&gt;
+&lt;/p&gt;</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<blockquote>
+<p>###加入樣式</p>
+</blockquote>
+
+<ol>
+<li>把抓下來的THEME檔，CSS、JS都放進assets/stylesheets、assets/jacascripts的資料夾，包括plugins/
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/282955/za20zoLDTrKnUEuoyTce_Screen%20Shot%202015-06-29%20at%205.02.32%20PM.png" alt="Screen Shot 2015-06-29 at 5.02.32 PM.png" /></li>
+<li>如果THEME檔案中有font檔，就要直接在<code>assets/</code>下建立fonts資料夾
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/282955/QVUDRBg2ReO9bIt3VApf_Screen%20Shot%202015-06-29%20at%205.38.19%20PM.png" alt="Screen Shot 2015-06-29 at 5.38.19 PM.png" /></li>
+<li>如果有font-awesome，要另外把font-awesome/css下的*.css檔一併拿到assets/stylesheets下</li>
+<li>有image檔就統一方在assets/images下</li>
+<li>把下載的檔案中<code>index.html</code>的內容複製到您預設的首頁，記得刪除預設的css、js路徑，雖然可能都還看得正常，但還是就報錯了
+<img src="http://user-image.logdown.io/user/13401/blog/12633/post/282955/YfEqzFHdR1qfmgHAts0o_Screen%20Shot%202015-06-29%20at%204.32.09%20PM.png" alt="Screen Shot 2015-06-29 at 4.32.09 PM.png" />
+先從develope tool看source是否有成功讀取</li>
+
+<li><p>FontAwesome’s css 檔案需要被轉成erb檔，所以用Rails path helper 來修復bug</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">src: url(&#39;&lt;%= asset_path(&#34;fontawesome-webfont.eot&#34;) %&gt;?v=4.1.0&#39;);
+src: url(&#39;&lt;%= asset_path(&#34;fontawesome-webfont.eot&#34;) %&gt;?#iefix&amp;v=4.1.0&#39;) format(&#39;embedded-opentype&#39;), url(&#39;&lt;%= asset_path(&#34;fontawesome-webfont.woff&#34;) %&gt;?v=4.1.0&#39;) format(&#39;woff&#39;), url(&#39;&lt;%= asset_path(&#34;fontawesome-webfont.ttf&#34;) %&gt;?v=4.1.0&#39;) format(&#39;truetype&#39;), url(&#39;&lt;%= asset_path(&#34;fontawesome-webfont.svg&#34;) %&gt;?v=4.1.0#fontawesomeregular&#39;) format(&#39;svg&#39;);</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>接著要修復js的bug,我們stub兩個在瀏覽器開發者工具中出現error的js檔案，這兩個檔案是THEME在demo時一起下載，我們用stub keyword把它關閉，進到application.js</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">//= stub plugins/flot/flot-data
+//= stub plugins/dataTables/dataTables.bootstrap</pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<p>stubbing會告訴Rails忽略這些檔案，但我們先不刪除檔案留著備用</p>
+
+<blockquote>
+<p>###deploy 到 Heroku</p>
+</blockquote>
+
+<p><a href="http://goo.gl/UWZJ4w">請見此篇教學</a></p>
+
+<blockquote>
+<p>###完成啦！</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Doran</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2015-06-29
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-07-01-railsbridge-extra-credit-add-a-downvote-button/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">RailsBridge Extra Credit : Add a downvote button</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/syntax-highlighting/">
+            <span class="next-text nav-default">Syntax Highlighting</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vneverz@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/doran.wu" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://github.com/vneverz" class="iconfont icon-github" title="github"></a>
+  <a href="https://vneverz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Doran</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

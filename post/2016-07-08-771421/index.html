@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>一些test程式紀錄 - Doron&#39;s code - Write Makes Might!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Doran" /><meta name="description" content="簡單測試memcache的code 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;?php $memcache = new Memcache; //Star memcache $memcache-&amp;gt;connect(&amp;#39;localhost&amp;#39;, 11211) or die (&amp;#34;Could not connect&amp;#34;); //Connect Memcached $memcache-&amp;gt;set(&amp;#39;uname&amp;#39;, &amp;#39;appleboy&amp;#39;); $get_value = $memcache-&amp;gt;get(&amp;#39;uname&amp;#39;); // echo $get_value; print &amp;#34;&amp;lt;br/&amp;gt;&amp;#34;; $b = $memcache-&amp;gt;getStats(); print_r($b);exit; $memcache-&amp;gt;delete(&amp;#39;uname&amp;#39;); //刪除key ?&amp;gt; 測試" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://vneverz.github.io/post/2016-07-08-771421/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="一些test程式紀錄" />
+<meta property="og:description" content="簡單測試memcache的code 1 2 3 4 5 6 7 8 9 10 11 12 &lt;?php $memcache = new Memcache; //Star memcache $memcache-&gt;connect(&#39;localhost&#39;, 11211) or die (&#34;Could not connect&#34;); //Connect Memcached $memcache-&gt;set(&#39;uname&#39;, &#39;appleboy&#39;); $get_value = $memcache-&gt;get(&#39;uname&#39;); // echo $get_value; print &#34;&lt;br/&gt;&#34;; $b = $memcache-&gt;getStats(); print_r($b);exit; $memcache-&gt;delete(&#39;uname&#39;); //刪除key ?&gt; 測試" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vneverz.github.io/post/2016-07-08-771421/" />
+<meta property="article:published_time" content="2016-07-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-08T00:00:00+00:00" />
+
+<meta itemprop="name" content="一些test程式紀錄">
+<meta itemprop="description" content="簡單測試memcache的code 1 2 3 4 5 6 7 8 9 10 11 12 &lt;?php $memcache = new Memcache; //Star memcache $memcache-&gt;connect(&#39;localhost&#39;, 11211) or die (&#34;Could not connect&#34;); //Connect Memcached $memcache-&gt;set(&#39;uname&#39;, &#39;appleboy&#39;); $get_value = $memcache-&gt;get(&#39;uname&#39;); // echo $get_value; print &#34;&lt;br/&gt;&#34;; $b = $memcache-&gt;getStats(); print_r($b);exit; $memcache-&gt;delete(&#39;uname&#39;); //刪除key ?&gt; 測試">
+
+
+<meta itemprop="datePublished" content="2016-07-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="441">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一些test程式紀錄"/>
+<meta name="twitter:description" content="簡單測試memcache的code 1 2 3 4 5 6 7 8 9 10 11 12 &lt;?php $memcache = new Memcache; //Star memcache $memcache-&gt;connect(&#39;localhost&#39;, 11211) or die (&#34;Could not connect&#34;); //Connect Memcached $memcache-&gt;set(&#39;uname&#39;, &#39;appleboy&#39;); $get_value = $memcache-&gt;get(&#39;uname&#39;); // echo $get_value; print &#34;&lt;br/&gt;&#34;; $b = $memcache-&gt;getStats(); print_r($b);exit; $memcache-&gt;delete(&#39;uname&#39;); //刪除key ?&gt; 測試"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Doran&#39;s code</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首頁</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">檔案夾</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">標籤</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分類</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Doran&#39;s code</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首頁</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">檔案夾</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">標籤</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分類</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">一些test程式紀錄</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-07-08 </span>
+        
+          <span class="more-meta"> 441 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>簡單測試memcache的code</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$memcache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">;</span> <span class="c1">//Star memcache
+</span><span class="c1"></span><span class="nv">$memcache</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">11211</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span> <span class="p">(</span><span class="s2">&#34;Could not connect&#34;</span><span class="p">);</span> <span class="c1">//Connect Memcached
+</span><span class="c1"></span><span class="nv">$memcache</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;uname&#39;</span><span class="p">,</span> <span class="s1">&#39;appleboy&#39;</span><span class="p">);</span>
+<span class="nv">$get_value</span> <span class="o">=</span> <span class="nv">$memcache</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;uname&#39;</span><span class="p">);</span> <span class="c1">//
+</span><span class="c1"></span><span class="k">echo</span> <span class="nv">$get_value</span><span class="p">;</span>
+<span class="k">print</span> <span class="s2">&#34;&lt;br/&gt;&#34;</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="nv">$memcache</span><span class="o">-&gt;</span><span class="na">getStats</span><span class="p">();</span>
+<span class="nx">print_r</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span><span class="k">exit</span><span class="p">;</span>
+
+<span class="nv">$memcache</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;uname&#39;</span><span class="p">);</span> <span class="c1">//刪除key
+</span><span class="c1"></span><span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>測試nesting array</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$tmpArray</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="k">array</span><span class="p">(</span><span class="s2">&#34;one&#34;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="k">array</span><span class="p">(</span><span class="s2">&#34;two&#34;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)),</span>
+    <span class="k">array</span><span class="p">(</span><span class="s2">&#34;three&#34;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="p">);</span>
+
+<span class="c1">//  Scan through outer loop
+</span><span class="c1"></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$tmpArray</span> <span class="k">as</span> <span class="nv">$inner</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//  Check type
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">is_array</span><span class="p">(</span><span class="nv">$inner</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">//  Scan through inner loop
+</span><span class="c1"></span>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$inner</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">echo</span> <span class="s2">&#34;</span><span class="si">$value</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+//out put 123456789
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>參考<a href="http://stackoverflow.com/questions/3684463/php-foreach-with-nested-array">PHP foreach with Nested Array?</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">private</span> <span class="k">function</span> <span class="nf">_build_hiiir_excel</span> <span class="p">(</span><span class="nv">$contentList</span><span class="p">,</span> <span class="nv">$titleList</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$contentList</span> <span class="k">as</span> <span class="nv">$i</span> <span class="o">=&gt;</span> <span class="nv">$content</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nv">$city_code</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;city_code&#39;</span><span class="p">);</span>
+            <span class="nv">$status</span> <span class="o">=</span> <span class="nx">Store</span><span class="o">::</span><span class="nv">$allStatus</span><span class="p">;</span>
+            <span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$titleList</span> <span class="k">as</span> <span class="nv">$title</span> <span class="o">=&gt;</span> <span class="nv">$exp</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">getStyle</span> <span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">getAlignment</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">setVertical</span> <span class="p">(</span><span class="nx">PHPExcel_Style_Alignment</span><span class="o">::</span><span class="na">VERTICAL_CENTER</span><span class="p">);</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">getStyle</span> <span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">getFont</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">setName</span> <span class="p">(</span><span class="s1">&#39;新細明體&#39;</span><span class="p">);</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getColumnDimension</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setAutoSize</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+                    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">SetCellValue</span> <span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nv">$title</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">eval</span> <span class="p">(</span><span class="s1">&#39;$val = &#39;</span> <span class="o">.</span> <span class="nv">$exp</span> <span class="o">.</span> <span class="s1">&#39;;&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStyle</span><span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">getAlignment</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">setVertical</span> <span class="p">(</span><span class="nx">PHPExcel_Style_Alignment</span><span class="o">::</span><span class="na">VERTICAL_CENTER</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStyle</span><span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">getFont</span> <span class="p">()</span><span class="o">-&gt;</span><span class="na">setName</span> <span class="p">(</span><span class="s2">&#34;新細明體&#34;</span><span class="p">);</span>
+								<span class="c1">//增加自動調整欄位長度於欄位A
+</span><span class="c1"></span>                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getColumnDimension</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setAutoSize</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hiiir_excel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">SetCellValue</span><span class="p">(</span><span class="nx">chr</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nv">$j</span><span class="p">)</span> <span class="o">.</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">),</span> <span class="nv">$val</span><span class="p">);</span>
+                <span class="nv">$j</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>如果想要從Ａ～F的欄位都要，就要loop：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">for</span><span class="p">(</span><span class="nv">$col</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span><span class="p">;</span> <span class="nv">$col</span> <span class="o">!==</span> <span class="s1">&#39;G&#39;</span><span class="p">;</span> <span class="nv">$col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$objPHPExcel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="na">getColumnDimension</span><span class="p">(</span><span class="nv">$col</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">setAutoSize</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//或是用foreach
+</span><span class="c1"></span> <span class="nv">$nCols</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="c1">//set the number of columns
+</span><span class="c1"></span>    <span class="k">foreach</span> <span class="p">(</span><span class="nx">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nv">$nCols</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$col</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$objPHPExcel</span><span class="o">-&gt;</span><span class="na">getActiveSheet</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getColumnDimensionByColumn</span><span class="p">(</span><span class="nv">$col</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setAutoSize</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>                
+    <span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>參考這篇[Setting autosize column phpExcel]<a href="http://stackoverflow.com/questions/21286275/setting-autosize-column-phpexce">http://stackoverflow.com/questions/21286275/setting-autosize-column-phpexce</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Doran</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-07-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2016-07-11-20160711-0715-records/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">20160711-0715工作記錄</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2015-12-15-infomation/">
+            <span class="next-text nav-default">infomation</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vneverz@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/doran.wu" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://github.com/vneverz" class="iconfont icon-github" title="github"></a>
+  <a href="https://vneverz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Doran</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Doron&#39;s code - Write Makes Might!</title>
+    <link>https://vneverz.github.io/tags/</link>
+    <description>Recent content in Tags on Doron&#39;s code - Write Makes Might!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 May 2019 00:11:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://vneverz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>blogging</title>
+      <link>https://vneverz.github.io/tags/blogging/</link>
+      <pubDate>Tue, 14 May 2019 00:11:14 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web development</title>
+      <link>https://vneverz.github.io/tags/web-development/</link>
+      <pubDate>Tue, 14 May 2019 00:11:14 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcodes</title>
+      <link>https://vneverz.github.io/tags/shortcodes/</link>
+      <pubDate>Tue, 30 Aug 2016 16:01:23 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Syntax Highlighting</title>
+      <link>https://vneverz.github.io/tags/syntax-highlighting/</link>
+      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/syntax-highlighting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preview</title>
+      <link>https://vneverz.github.io/tags/preview/</link>
+      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-5</title>
+      <link>https://vneverz.github.io/tags/tag-5/</link>
+      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/tags/tag-5/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

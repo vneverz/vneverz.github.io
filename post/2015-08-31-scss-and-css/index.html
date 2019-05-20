@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SCSS and CSS - Doron&#39;s code - Write Makes Might!</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Doran" /><meta name="description" content="Sass Clearfix Mixin 會用Sass的同學可以直接將上面的語法封裝成一個Sass的Mixin，Mixin是類似函式那樣的東西，可以讓你省掉很多重複撰寫的動作。" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://vneverz.github.io/post/2015-08-31-scss-and-css/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SCSS and CSS" />
+<meta property="og:description" content="Sass Clearfix Mixin 會用Sass的同學可以直接將上面的語法封裝成一個Sass的Mixin，Mixin是類似函式那樣的東西，可以讓你省掉很多重複撰寫的動作。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vneverz.github.io/post/2015-08-31-scss-and-css/" />
+<meta property="article:published_time" content="2015-08-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-08-31T00:00:00+00:00" />
+
+<meta itemprop="name" content="SCSS and CSS">
+<meta itemprop="description" content="Sass Clearfix Mixin 會用Sass的同學可以直接將上面的語法封裝成一個Sass的Mixin，Mixin是類似函式那樣的東西，可以讓你省掉很多重複撰寫的動作。">
+
+
+<meta itemprop="datePublished" content="2015-08-31T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-08-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="346">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SCSS and CSS"/>
+<meta name="twitter:description" content="Sass Clearfix Mixin 會用Sass的同學可以直接將上面的語法封裝成一個Sass的Mixin，Mixin是類似函式那樣的東西，可以讓你省掉很多重複撰寫的動作。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Doran&#39;s code</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首頁</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">檔案夾</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">標籤</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分類</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Doran&#39;s code</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首頁</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">檔案夾</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">標籤</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分類</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SCSS and CSS</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-08-31 </span>
+        
+          <span class="more-meta"> 346 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#design-considerations-text-on-images">Design Considerations: Text on Images</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>Sass Clearfix Mixin
+會用Sass的同學可以直接將上面的語法封裝成一個Sass的Mixin，Mixin是類似函式那樣的東西，可以讓你省掉很多重複撰寫的動作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="cm">/*建立一個clearfix的mixin*/</span>
+<span class="k">@mixin</span><span class="nf"> clearfix</span> <span class="p">{</span>
+  <span class="k">&amp;</span><span class="nd">:after</span><span class="o">,</span> <span class="k">&amp;</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="nt">content</span><span class="nd">:</span> <span class="s2">&#34;&#34;</span><span class="o">;</span>
+    <span class="nt">display</span><span class="nd">:</span> <span class="nt">table</span><span class="o">;</span>
+  <span class="p">}</span>
+  <span class="k">&amp;</span><span class="nd">:after</span><span class="p">{</span>
+    <span class="nt">clear</span><span class="nd">:both</span><span class="o">;</span>
+  <span class="p">}</span>
+  <span class="o">*</span><span class="nt">zoom</span><span class="nd">:1</span><span class="o">;</span>
+<span class="p">}</span>
+ 
+<span class="cm">/*在父元素include clearfix*/</span>
+<span class="nc">.wrap</span><span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> clearfix</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><a href="http://kgl.idv.tw/2014/11/17/css-clearfix-%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8B%95/">CSS Clearfix 清除浮動</a>
+Select/dropdow  can with no outline
+<a href="http://codepen.io/alexdevero/pen/Kpfut">http://codepen.io/alexdevero/pen/Kpfut</a></p>
+
+<p>清楚的 css position教學
+<a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">http://www.barelyfitz.com/screencast/html-training/css/positioning/</a></p>
+
+<p>好用的陰影產生器，可內陰外陰同時有喔！
+<a href="http://www.css3developer.com/css3generator/inset-box-shadow-css.html">CSS Box Shadow Generator</a>
+<a href="http://stackoverflow.com/questions/6048899/css3-box-shadow-both-outter-and-inner">CSS3 box shadow: both, outter and inner</a></p>
+
+<p>css tab menu
+<a href="http://codepen.io/amustill/pen/snahq">http://codepen.io/amustill/pen/snahq</a>
+<a href="http://codepen.io/simeydotme/pen/JmKDi">http://codepen.io/simeydotme/pen/JmKDi</a>
+<a href="http://codepen.io/simeydotme/pen/JmKDi">http://codepen.io/simeydotme/pen/JmKDi</a>
+list menu
+<a href="http://css.maxdesign.com.au/index.htm">http://css.maxdesign.com.au/index.htm</a></p>
+
+<p>###要排出兩邊都齊但中間平均分配的img flow</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">本次版面是4的倍數，所以要指定4n的物件移除右邊的margin，是要下在上一個class不是img喔！</pre></td></tr></table>
+</div>
+</div>
+<p><img src="http://user-image.logdown.io/user/13401/blog/12633/post/293800/OR2luF8SR1ySWKjbrEfH_Screen%20Shot%202015-09-03%20at%205.05.44%20PM.png" alt="Screen Shot 2015-09-03 at 5.05.44 PM.png" /></p>
+
+<p>###CSS dialog
+pure css
+<a href="http://codepen.io/maccadb7/pen/nbHEg">http://codepen.io/maccadb7/pen/nbHEg</a>
+<a href="http://drublic.github.io/css-modal/#howto">http://drublic.github.io/css-modal/#howto</a></p>
+
+<p>###CSS scale and square center crop image
+<a href="http://stackoverflow.com/questions/16310918/css-scale-and-square-center-crop-image">http://stackoverflow.com/questions/16310918/css-scale-and-square-center-crop-image</a>
+###Proportionally Scale or Crop Images Using CSS
+<a href="http://salman-w.blogspot.tw/2014/11/proportionally-scale-or-crop-images.html">http://salman-w.blogspot.tw/2014/11/proportionally-scale-or-crop-images.html</a>
+###good bootstrap select style
+<a href="http://silviomoreto.github.io/bootstrap-select/">http://silviomoreto.github.io/bootstrap-select/</a></p>
+
+<p><a href="http://nicolasgallagher.com/jump-links-and-viewport-positioning/">Jump links and viewport positioning</a></p>
+
+<p><a href="http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors">HTML position:fixed page header and in-page anchors</a></p>
+
+<p><a href="http://stackoverflow.com/questions/3794039/how-to-find-a-hash-key-containing-a-matching-value">How to find a hash key containing a matching value</a></p>
+
+<h3 id="design-considerations-text-on-images">Design Considerations: Text on Images</h3>
+
+<p>Tinting
+<a href="https://css-tricks.com/design-considerations-text-images/">https://css-tricks.com/design-considerations-text-images/</a></p>
+
+<p>###How to make a very large facebook share button?
+<a href="http://stackoverflow.com/questions/21301189/how-to-make-a-very-large-facebook-share-button">http://stackoverflow.com/questions/21301189/how-to-make-a-very-large-facebook-share-button</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Doran</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2015-08-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-09-02-ruby-on-rails-js-tips/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ruby on Rails JS tips</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2015-08-31-ted-quote-lines/">
+            <span class="next-text nav-default">TED名言佳句</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:vneverz@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.facebook.com/doran.wu" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="https://github.com/vneverz" class="iconfont icon-github" title="github"></a>
+  <a href="https://vneverz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Doran</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blogging on Doron&#39;s code - Write Makes Might!</title>
+    <link>https://vneverz.github.io/tags/blogging/</link>
+    <description>Recent content in blogging on Doron&#39;s code - Write Makes Might!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 14 May 2019 00:11:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://vneverz.github.io/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>效率建置網站：Hugo&#43;Github Page搭配Travis CI</title>
+      <link>https://vneverz.github.io/post/usehugo/</link>
+      <pubDate>Tue, 14 May 2019 00:11:14 +0800</pubDate>
+      
+      <guid>https://vneverz.github.io/post/usehugo/</guid>
+      <description>介紹 決定要使用新的技術和資源來建置個人部落格時，看了不少文章，但花了一天的時間卻總是遇到問題，像是文章中沒有說明清楚在哪個資料夾中進行指令導</description>
+    </item>
+    
+  </channel>
+</rss>
