@@ -1,0 +1,100 @@
+.h { margin-top: 0; }
+
+.state {
+  position: absolute;
+  top: 0;
+  left: -100vw;
+}
+
+.state:checked ~ .content {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.state:checked ~ .backdrop {
+  bottom: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0;
+  padding: 0 20px;
+}
+
+.lightbox .content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;;
+  max-width: 500px;
+  max-height: 95vh;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+  -webkit-transition: 0.3s -webkit-transform ease-in-out;
+  transition: 0.3s transform ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lightbox .header,
+.lightbox .footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.lightbox .header .h,
+.lightbox .footer .h { margin: 0; }
+
+.lightbox .header .button:not(:first-child),
+.lightbox .footer .button:not(:first-child) { margin-left: auto; }
+
+.lightbox .header { padding-bottom: 10px; }
+
+.lightbox .footer { padding-top: 20px; }
+
+.lightbox .main {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+.lightbox .backdrop {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.3s opacity ease-in-out;
+  transition: 0.3s opacity ease-in-out;
+}
